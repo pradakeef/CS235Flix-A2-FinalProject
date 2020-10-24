@@ -17,6 +17,7 @@ def make_dict_from_movie_list(movie_list: list) -> dict:
         movie_dict[movie.title] = movie.release_year
     return movie_dict
 
+
 def get_movies_by_genre(genre_name: str, repo: 'AbstractRepository') -> list:
     a_genre = Genre(genre_name)
     movie_list = list()

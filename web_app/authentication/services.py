@@ -23,6 +23,7 @@ class AuthenticationException(Exception):
 class NameTakenException(Exception):
     pass
 
+
 class NameNotUniqueException(Exception):
     pass
 

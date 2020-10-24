@@ -3,6 +3,10 @@ from bisect import insort_left
 from web_app.adapters.repository import AbstractRepository
 from web_app.domainmodel.movie import Movie
 from web_app.domainmodel.user import User
+from web_app.domainmodel.director import Director
+from web_app.domainmodel.actor import Actor
+from web_app.domainmodel.genre import Genre
+
 from web_app.datafilereaders.movie_file_csv_reader import MovieFileCSVReader
 
 
@@ -23,6 +27,9 @@ class MemoryRepository(AbstractRepository):
             return None
         else:
             return self.__movie_index[id]
+
+    def get_movies(self) -> list:
+        return self.__movies
 
     def get_genres(self) -> list:
         return self.__genres
@@ -76,6 +83,11 @@ class MemoryRepository(AbstractRepository):
 
     def get_user(self, username) -> User:
         return next((user for user in self.__users if user.user_name == username), None)
+
+    def get_users(self) -> list:
+        return self.__users
+
+
 
 
 def populate(filename, repo):
