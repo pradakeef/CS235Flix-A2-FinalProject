@@ -1,6 +1,6 @@
 import pytest
-from domainmodel.movie import Movie
-from domainmodel.watchlist import WatchList
+from web_app.domainmodel.movie import Movie
+from web_app.domainmodel.watchlist import WatchList
 
 
 def test_size():

@@ -35,7 +35,7 @@ def login():
             if services.authenticate_user(user['username'], form.password.data, repo.repository_instance):
                 session.clear()
                 session['username'] = user['username']
-                return redirect(url_for('home_bp.index'))
+                return redirect(url_for('home_bp.home'))
             else:
                 password_message = 'Password does not match'
         except services.UnknownUserError:

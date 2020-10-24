@@ -27,6 +27,22 @@ class AbstractRepository(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
+    def get_movies(self):
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def get_users(self):
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def get_actors(self):
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def get_directors(self):
+        raise NotImplementedError
+
+    @abc.abstractmethod
     def add_user(self, user: User):
         """" Adds a User to the repository. """
         raise NotImplementedError

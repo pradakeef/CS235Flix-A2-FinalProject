@@ -1,7 +1,7 @@
-from flix_web_app.domainmodel.user import User
-from domainmodel.movie import Movie
-from domainmodel.comment import Comment
-from domainmodel.watchlist import WatchList
+from web_app.domainmodel.user import User
+from web_app.domainmodel.movie import Movie
+from web_app.domainmodel.comment import Comment
+from web_app.domainmodel.watchlist import WatchList
 
 
 def test_user_comments():
