@@ -16,9 +16,9 @@ def home():
     else:
         cursor = int(cursor)
 
-    movie_ids = services.get_ids_of_movies(repo.repo_instance)
+    movie_ids = services.get_ids_of_movies(repo.repository_instance)
 
-    movies = services.get_movies(movie_ids[cursor: cursor + movies_per_page], repo.repo_instance)
+    movies = services.get_movies(movie_ids[cursor: cursor + movies_per_page], repo.repository_instance)
 
     first_movie = None
     prev_movie = None

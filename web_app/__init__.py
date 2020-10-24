@@ -10,8 +10,8 @@ def create_app():
 
     app.config.from_object('config.Config')
 
-    repo.repo_instance = MemoryRepository()
-    populate('web_app/datafiles/Data1000Movies.csv', repo.repo_instance)
+    repo.repository_instance = MemoryRepository()
+    populate('web_app/datafiles/Data1000Movies.csv', repo.repository_instance)
 
     with app.app_context():
         # Register blueprints.
@@ -20,5 +20,8 @@ def create_app():
 
         from .search import search
         app.register_blueprint(search.search_blueprint)
+
+        from .authentication import authentication
+        app.register_blueprint(authentication.authentication_blueprint)
 
     return app
