@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<main id="main">
+    <div id="home_header">
+        <h2>A space to share your love of movies</h2>
+    </div>
+    <h3>Browse our world of films:</h3>
+
+    <div id="movie_box">
+    {% for movie in movies %}
+    <h2 id="movie_title">{{movie.title}}</h2>
+    <h4 id="movie_desc">{{movie.description}}</h4>
+    <p>Starring:
+        {% for actor in movie.actors %}
+            {% if actor == movie.last_actor %}
+                and {{actor.actor_full_name}}
+            {% else %}
+                {{actor.actor_full_name}},
+            {% endif %}
+        {% endfor %}</p>
+    <p>Directed by: {{movie.director.director_full_name}}</p>
+    {% endfor %}
+
+    <div>
+    {% if first_movie is not none %}
+        <button class="but-home" onclick="location.href='{{first_movie}}'">First</button>
+    {% else %}
+        <button class="but-disabled" disabled>First</button>
+    {% endif %}
+    {% if last_movie is not none %}
+        <button class="but-home" onclick="location.href='{{last_movie}}'">Last</button>
+    {% else %}
+        <button class="but-disabled" disabled>Last</button>
+    {% endif %}
+    </div>
+    <div>
+    {% if prev_movie is not none %}
+        <button class="but-home" onclick="location.href='{{prev_movie}}'">Back</button>
+    {% else %}
+        <button class="but-disabled" disabled>Back</button>
+    {% endif %}
+    {% if next_movie is not none %}
+        <button class="but-home" onclick="location.href='{{next_movie}}'">Next</button>
+    {% else %}
+        <button class="but-disabled" disabled>Next</button>
+    {% endif %}
+
+    </div>
+    </div>
+
+</main>
+
+{% endblock %}

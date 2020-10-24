@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NugFlix</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+
+    <link
+      rel="bookmark"
+	  type="image/x-icon"
+      href="cam.png"
+    />
+
+	<link
+      rel="icon"
+      href="cam.png"
+    />
+  </head>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+
+
+
+<body>
+    <div id="body">
+      <!-- Include navigation partial. -->
+      {% include 'navigation.html' %}
+
+      <div id="content-2">
+        <!-- Include header partial. -->
+        {% include 'header.html' %}
+
+        <div >
+          <!-- Main content block to be supplied by page. -->
+          {% block content %}
+            {% endblock %}
+
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
