@@ -39,5 +39,18 @@ The *web_app/.env* file contains variable settings. They are set with appropriat
 * `TESTING`: Set to False for running the application. Overridden and set to True automatically when testing the application.
 * `WTF_CSRF_SECRET_KEY`: Secret key used by the WTForm library.
 
+## Testing
+
+Testing requires that file *COMPSCI-235/tests/conftest.py* be edited to set the value of `TEST_DATA_PATH`. You should set this to the absolute path of the *COMPSCI-235/tests/data* directory. 
+
+E.g. 
+
+`TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'ian', 'Documents', 'Python dev', 'COVID-19', 'tests', 'data')`
+
+assigns TEST_DATA_PATH with the following value (the use of os.path.join and os.sep ensures use of the correct platform path separator):
+
+`C:\Users\ian\Documents\python-dev\COVID-19\tests\data`
+
+You can then run tests from within PyCharm.
 
  
